@@ -2,19 +2,19 @@
 import React, { useState, useEffect } from 'react';
 
 function Temperature() {
-  const [data, setData] = useState(Infinity);
+  const [data, setData] = useState(null);
 
-  // useEffect(() => {
-  //   fetch("https://api.open-meteo.com/v1/forecast?latitude=37.7749&longitude=-122.4194&current=temperature_2m&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setData(data.current.temperature_2m);
-  //     })
-  // })
+  useEffect(() => {
+    fetch("https://api.open-meteo.com/v1/forecast?latitude=37.7749&longitude=-122.4194&current=temperature_2m&hourly=temperature_2m&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=America%2FLos_Angeles")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+      })
+  })
 
   return (
     <>
-      <div id="temperature">Current Temperature:<br></br>{data}°</div>
+      <div id="temperature">Current Temperature:<br></br>{data? data.current.temperature_2m : "Undefined"}°</div>
       <div id="attribution">
         <a className="text-blue-500 underline" href="https://open-meteo.com/" rel="nofollow">Weather data by Open-Meteo.com</a> is licensed under <a className="text-blue-500 underline" rel="nofollow" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
       </div>
