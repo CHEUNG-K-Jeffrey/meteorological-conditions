@@ -14,7 +14,7 @@ function Temperature() {
 
   return (
     <>
-      <div id="temperature">Current Temperature:<br></br>{data? data.current.temperature_2m : "Undefined"}°</div>
+      <div id="current-temperature">Current Temperature:<br></br>{data? data.current.temperature_2m : "Null"}°</div>
       <div id="attribution">
         <a className="text-blue-500 underline" href="https://open-meteo.com/" rel="nofollow">Weather data by Open-Meteo.com</a> is licensed under <a className="text-blue-500 underline" rel="nofollow" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
       </div>
