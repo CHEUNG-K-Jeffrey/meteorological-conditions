@@ -10,7 +10,7 @@ function Temperature() {
       .then((data) => {
         setData(data);
       })
-  })
+  }, [])
 
   return (
     <>
