@@ -31,7 +31,7 @@ function Temperature() {
       </table>
       </div>
 
-      <div id="attribution">
+      <div id="attribution" className="text-center">
         <a className="text-blue-500 underline" href="https://open-meteo.com/" rel="nofollow">Weather data by Open-Meteo.com</a> is licensed under <a className="text-blue-500 underline" rel="nofollow" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
       </div>
     </>
