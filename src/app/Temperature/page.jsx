@@ -14,7 +14,7 @@ function Temperature() {
 
   return (
     <>
-      <div id="current-temperature">Current Temperature:<br></br>{data ? (data.error ? data.reason : data.current.temperature_2m) : "Null"}°</div>
+      <div id="current-temperature" className="text-center">Current Temperature:<br></br>{data ? (data.error ? data.reason : data.current.temperature_2m) : "Null"}°</div>
 
       <div id="container-table" className="border rounded border-black sm:columns-2">
       <table>
