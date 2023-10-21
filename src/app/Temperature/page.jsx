@@ -16,13 +16,8 @@ function Temperature() {
     <>
       <div id="current-temperature">Current Temperature:<br></br>{data ? (data.error ? data.reason : data.current.temperature_2m) : "Null"}°</div>
 
+      <div id="container-table" className="md:columns-2">
       <table>
-        <thead>
-          <tr>
-            <th>Time</th>
-            <th>Temperature</th>
-          </tr>
-        </thead>
         <tbody>
         {data ? (data.error ? data.reason : data.hourly.time.map((time, index) => {
             return (
@@ -34,6 +29,7 @@ function Temperature() {
           })) : ""}
         </tbody>
       </table>
+      </div>
 
       <div id="attribution">
         <a className="text-blue-500 underline" href="https://open-meteo.com/" rel="nofollow">Weather data by Open-Meteo.com</a> is licensed under <a className="text-blue-500 underline" rel="nofollow" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
