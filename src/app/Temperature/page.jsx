@@ -13,7 +13,7 @@ function Temperature() {
   }, [])
 
   return (
-    <div id="temperature-container" className="flex flex-col">
+    <div id="temperature-container" className="flex-auto flex flex-col justify-between">
       <div id="current-temperature" className="text-center">Current Temperature:<br></br>{data ? (data.error ? data.reason : data.current.temperature_2m) : "Null"}°</div>
 
       <div id="container-table" className="border rounded border-black sm:columns-2">
@@ -41,7 +41,7 @@ function Temperature() {
 export default function TemperaturePage() {
   return (
     <main className="flex flex-col h-screen">
-      <div id="temperature-page" className="flex-auto p-10 sm:p-20">
+      <div id="temperature-page" className="flex flex-auto p-10 sm:p-20">
         <Temperature></Temperature>
       </div>
     </main>
