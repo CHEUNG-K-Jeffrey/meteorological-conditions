@@ -16,7 +16,7 @@ function Temperature() {
     <>
       <div id="current-temperature">Current Temperature:<br></br>{data ? (data.error ? data.reason : data.current.temperature_2m) : "Null"}°</div>
 
-      <div id="container-table" className="sm:columns-2">
+      <div id="container-table" className="border rounded border-black sm:columns-2">
       <table>
         <tbody>
         {data ? (data.error ? data.reason : data.hourly.time.map((time, index) => {
