@@ -41,7 +41,7 @@ function Temperature() {
 export default function TemperaturePage() {
   return (
     <main className="flex flex-col h-screen">
-      <div id="temperature-page" className="p-20">
+      <div id="temperature-page" className="p-10 sm:p-20">
         <Temperature></Temperature>
       </div>
     </main>
