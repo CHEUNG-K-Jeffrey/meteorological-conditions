@@ -13,7 +13,7 @@ function Temperature() {
   }, [])
 
   return (
-    <>
+    <div id="temperature-container" className="flex flex-col">
       <div id="current-temperature" className="text-center">Current Temperature:<br></br>{data ? (data.error ? data.reason : data.current.temperature_2m) : "Null"}°</div>
 
       <div id="container-table" className="border rounded border-black sm:columns-2">
@@ -34,14 +34,14 @@ function Temperature() {
       <div id="attribution" className="text-center">
         <a className="text-blue-500 underline" href="https://open-meteo.com/" rel="nofollow">Weather data by Open-Meteo.com</a> is licensed under <a className="text-blue-500 underline" rel="nofollow" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
       </div>
-    </>
+    </div>
   )
 }
 
 export default function TemperaturePage() {
   return (
     <main className="flex flex-col h-screen">
-      <div id="temperature-page" className="p-10 sm:p-20">
+      <div id="temperature-page" className="flex-auto p-10 sm:p-20">
         <Temperature></Temperature>
       </div>
     </main>
