@@ -5,7 +5,7 @@ function Temperature() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("https://api.open-meteo.com/v1/forecast?latitude=37.7749&longitude=-122.4194&current=temperature_2m&hourly=temperature_2m&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timezone=America%2FLos_Angeles&forecast_days=1")
+    fetch("https://api.open-meteo.com/v1/forecast?latitude=37.7749&longitude=-122.4194&current=temperature_2m&hourly=temperature_2m&timezone=auto&forecast_days=1")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
