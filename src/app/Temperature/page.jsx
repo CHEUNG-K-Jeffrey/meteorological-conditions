@@ -14,7 +14,27 @@ function Temperature() {
 
   return (
     <>
-      <div id="current-temperature">Current Temperature:<br></br>{data? (data.error? data.reason : data.current.temperature_2m) : "Null"}°</div>
+      <div id="current-temperature">Current Temperature:<br></br>{data ? (data.error ? data.reason : data.current.temperature_2m) : "Null"}°</div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Temperature</th>
+          </tr>
+        </thead>
+        <tbody>
+        {data ? (data.error ? data.reason : data.hourly.time.map((time, index) => {
+            return (
+                <tr key={time}>
+                  <td>{time}</td>
+                  <td>{data.hourly.temperature_2m[index]}</td>
+                </tr>
+            )
+          })) : ""}
+        </tbody>
+      </table>
+
       <div id="attribution">
         <a className="text-blue-500 underline" href="https://open-meteo.com/" rel="nofollow">Weather data by Open-Meteo.com</a> is licensed under <a className="text-blue-500 underline" rel="nofollow" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
       </div>
