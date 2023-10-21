@@ -22,8 +22,8 @@ function Temperature() {
         {data ? (data.error ? data.reason : data.hourly.time.map((time, index) => {
             return (
                 <tr key={time}>
-                  <td>{time}</td>
-                  <td>{data.hourly.temperature_2m[index]}</td>
+                  <td>{time.slice(-5)}</td>
+                  <td>{data.hourly.temperature_2m[index]+"°"}</td>
                 </tr>
             )
           })) : ""}
