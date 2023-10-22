@@ -19,7 +19,7 @@ function Temperature() {
         <span className="text-5xl">{data ? (data.error ? data.reason : data.current.temperature_2m) : "Null"}°</span>
       </div>
 
-      <div id="temperature-grid" className="grid p-4 gap-4 sm:grid-cols-2 border rounded border-black">
+      <div id="temperature-grid" className="grid p-4 gap-4 sm:grid-cols-2 border rounded-3xl border-black">
         {data ? (data.error ? data.reason : data.hourly.time.map((time, index) => {
             return (
                 <div key={time} className="flex justify-around text-xl">
