@@ -14,17 +14,17 @@ function Temperature() {
 
   return (
     <div id="temperature-container" className="flex-auto flex flex-col justify-between">
-      <div id="current-temperature" className="text-center">
-        <span>Current Temperature:</span><br/>
-        <span>{data ? (data.error ? data.reason : data.current.temperature_2m) : "Null"}°</span>
+      <div id="current-temperature" className="flex flex-col items-center">
+        <span className="text-4xl">Current Temperature:</span><br/>
+        <span className="text-5xl">{data ? (data.error ? data.reason : data.current.temperature_2m) : "Null"}°</span>
       </div>
 
       <div id="temperature-grid" className="grid p-4 gap-4 sm:grid-cols-2 border rounded border-black">
         {data ? (data.error ? data.reason : data.hourly.time.map((time, index) => {
             return (
-                <div key={time} className="flex justify-around">
-                  <div className="text-base">{time.slice(-5)}</div>
-                  <div className="text-base">{data.hourly.temperature_2m[index]+"°"}</div>
+                <div key={time} className="flex justify-around text-xl">
+                  <div>{time.slice(-5)}</div>
+                  <div>{data.hourly.temperature_2m[index]+"°"}</div>
                 </div>
             )
           })) : ""}
