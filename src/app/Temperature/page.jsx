@@ -14,7 +14,7 @@ function Temperature() {
 
   return (
     <div id="temperature-container" className="flex-auto flex flex-col justify-between">
-      <div id="current-temperature" className="flex flex-col items-center">
+      <div id="current-temperature" className="flex flex-col items-center p-4">
         <span className="text-4xl">Current Temperature:</span><br/>
         <span className="text-5xl">{data ? (data.error ? data.reason : data.current.temperature_2m) : "Null"}°</span>
       </div>
