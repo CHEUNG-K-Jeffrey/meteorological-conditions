@@ -20,8 +20,8 @@ function Temperature() {
         {data ? (data.error ? data.reason : data.hourly.time.map((time, index) => {
             return (
                 <div key={time} className="flex justify-around">
-                  <div>{time.slice(-5)}</div>
-                  <div>{data.hourly.temperature_2m[index]+"°"}</div>
+                  <div className="text-base">{time.slice(-5)}</div>
+                  <div className="text-base">{data.hourly.temperature_2m[index]+"°"}</div>
                 </div>
             )
           })) : ""}
