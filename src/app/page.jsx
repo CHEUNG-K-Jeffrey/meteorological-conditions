@@ -29,7 +29,7 @@ function Clock() {
 export default function HomePage() {
   return (
     <main className="flex flex-col h-screen">
-      <div id="home-page" className="p-20">
+      <div id="home-page" className="flex flex-col flex-auto p-10 sm:p-20">
         <Location></Location>
         <Clock></Clock>
       </div>
