@@ -40,8 +40,8 @@ function Temperature() {
 
 export default function TemperaturePage() {
   return (
-    <main className="flex flex-col h-screen">
-      <div id="temperature-page" className="flex flex-auto p-10 sm:p-20 overflow-auto">
+    <main className="grid grid-cols-1 h-screen ">
+      <div id="temperature-page" className="flex p-10 sm:p-20 overflow-auto">
         <Temperature></Temperature>
       </div>
       <NavigationBar></NavigationBar>
