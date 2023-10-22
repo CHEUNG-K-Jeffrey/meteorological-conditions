@@ -14,7 +14,10 @@ function Temperature() {
 
   return (
     <div id="temperature-container" className="flex-auto flex flex-col justify-between">
-      <div id="current-temperature" className="text-center">Current Temperature:<br></br>{data ? (data.error ? data.reason : data.current.temperature_2m) : "Null"}°</div>
+      <div id="current-temperature" className="text-center">
+        <span>Current Temperature:</span><br/>
+        <span>{data ? (data.error ? data.reason : data.current.temperature_2m) : "Null"}°</span>
+      </div>
 
       <div id="temperature-grid" className="grid p-4 gap-4 sm:grid-cols-2 border rounded border-black">
         {data ? (data.error ? data.reason : data.hourly.time.map((time, index) => {
