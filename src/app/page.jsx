@@ -1,5 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react';
+import NavigationBar from './NavigationBar';
 
 function Location() {
   return (
@@ -33,6 +34,7 @@ export default function HomePage() {
         <Location></Location>
         <Clock></Clock>
       </div>
+      <NavigationBar></NavigationBar>
     </main>
   )
 }
