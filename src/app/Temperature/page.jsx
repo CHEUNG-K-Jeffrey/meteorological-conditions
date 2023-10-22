@@ -1,5 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react';
+import NavigationBar from '../NavigationBar';
 
 function Temperature() {
   const [data, setData] = useState(null);
@@ -43,6 +44,7 @@ export default function TemperaturePage() {
       <div id="temperature-page" className="flex flex-auto p-10 sm:p-20">
         <Temperature></Temperature>
       </div>
+      <NavigationBar></NavigationBar>
     </main>
   )
 }
