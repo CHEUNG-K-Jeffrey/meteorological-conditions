@@ -16,7 +16,7 @@ function Clock() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime((new Date()).getTime())
+      setTime((new Date()).toLocaleString('en-US', {timeZone: 'America/Los_Angeles', hour12: false, timeStyle: 'short'}))
     }, 1000);
 
     return () => clearInterval(interval);
