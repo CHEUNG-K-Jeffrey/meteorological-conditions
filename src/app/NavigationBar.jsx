@@ -9,10 +9,10 @@ function NavigationButton(props) {
 export default function NavigationBar() {
     return (
         <div className="self-end flex justify-evenly w-screen h-24  bg-slate-300">
-            <NavigationButton href="/">
+            <NavigationButton id="home-page-button" href="/">
                 <i className="fa-4x fa-solid fa-house"></i>
             </NavigationButton>
-            <NavigationButton href="/Temperature">
+            <NavigationButton id="temperature-page-button" href="/Temperature">
                 <i className="fa-4x fa-solid fa-temperature-half"></i>
             </NavigationButton>
         </div>
