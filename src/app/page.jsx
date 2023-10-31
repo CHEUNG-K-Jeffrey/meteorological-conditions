@@ -23,7 +23,7 @@ function Clock() {
   }, []);
 
   return (
-    <div>{time}</div>
+    <div className="text-9xl">{time}</div>
   )
 }
 
