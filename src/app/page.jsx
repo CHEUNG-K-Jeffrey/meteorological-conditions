@@ -23,7 +23,9 @@ function Clock() {
   }, []);
 
   return (
-    <div className="text-9xl">{time}</div>
+    <div id="clock" className="flex justify-center">
+      <div className="text-9xl">{time}</div>
+    </div>
   )
 }
 
