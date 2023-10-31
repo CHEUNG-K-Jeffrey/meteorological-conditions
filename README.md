@@ -1,4 +1,6 @@
 # meteorological-conditions
+> **This is the legacy codebase. Please see the main branch for the rewritten one.**
+
 A meteorological conditions app created for Code The Dream advanced pre-work assignment
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
