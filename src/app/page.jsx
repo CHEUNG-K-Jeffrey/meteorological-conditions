@@ -31,7 +31,7 @@ function Clock() {
 
 export default function HomePage() {
   return (
-    <main className="grid grid-cols-1 h-screen">
+    <main className="grid grid-rows-[repeat(10,_minmax(0,_1fr))] h-screen">
       <div id="home-page" className="flex flex-col flex-auto p-10 sm:p-20">
         <Location></Location>
         <Clock></Clock>

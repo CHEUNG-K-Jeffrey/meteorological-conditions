@@ -8,7 +8,7 @@ function NavigationButton(props) {
 
 export default function NavigationBar() {
     return (
-        <div className="self-end flex justify-evenly w-screen h-20 sm:h-24  bg-slate-300">
+        <div className="self-end row-[end_9/_end_9] flex justify-evenly w-screen h-20 sm:h-24  bg-slate-300">
             <NavigationButton id="home-page-button" href="/">
                 <i className="fa-3x fa-solid fa-house"></i>
             </NavigationButton>
