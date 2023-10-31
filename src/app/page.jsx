@@ -5,8 +5,8 @@ import NavigationBar from './NavigationBar';
 function Location() {
   return (
     <>
-      <div>Location</div>
-      <input type="text" placeholder="Location" value="San Francisco, Ca" disabled></input>
+      <div className="text-4xl p-2">Location</div>
+      <input className="text-3xl p-4 rounded-full" type="text" placeholder="Location" value="San Francisco, Ca" disabled></input>
     </>
   )
 }
