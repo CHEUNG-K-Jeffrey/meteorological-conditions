@@ -1,7 +1,7 @@
 const clockElement = document.querySelector("#clock-time");
 
 function runClock() {
-    const locale = navigator.language;
+    const locale = (navigator && navigator.language) || "en-US";
     
     const timeOptions = {
         timeStyle: 'medium'
