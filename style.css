@@ -1,4 +1,5 @@
 body {
+    display: grid; /* Makes child element expand to height of parent */
     min-height: 100vh;
     margin: 0;
 }
