@@ -12,3 +12,13 @@ body {
 #location-heading {
     font-size: 3rem;
 }
+
+#clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clock-time {
+    font-size: 5em;
+}
