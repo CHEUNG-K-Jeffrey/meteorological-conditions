@@ -7,3 +7,7 @@ body {
     display: grid;
     padding: 5rem;
 }
+
+#location-heading {
+    font-size: 3rem;
+}
