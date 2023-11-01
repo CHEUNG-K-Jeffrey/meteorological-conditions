@@ -6,4 +6,5 @@ body {
 
 .page {
     display: grid;
+    padding: 5rem;
 }
