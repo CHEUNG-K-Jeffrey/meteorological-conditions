@@ -1,4 +1,4 @@
-const clockElement = document.querySelector("#clock-container");
+const clockElement = document.querySelector("#clock-time");
 
 function runClock() {
     const locale = navigator.language;
