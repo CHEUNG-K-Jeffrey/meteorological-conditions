@@ -1,14 +1,3 @@
-body {
-    display: grid; /* Makes child element expand to height of parent */
-    min-height: 100vh;
-    margin: 0;
-}
-
-.page {
-    display: grid;
-    padding: 5rem;
-}
-
 #location-heading {
     font-size: 3rem;
 }
