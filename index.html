@@ -10,14 +10,21 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <main class="page">
-            <div id="location-container">
-                <div id="location-heading">Location</div>
-                <!-- TODO: Allow user to input the location instead of just displaying a hardcoded location -->
-                <input id="location-input" type="text" placeholder="San Francisco, Ca" disabled/>
+        <main>
+            <div id="home" class="page">
+                <div id="location-container">
+                    <h1 id="location-heading">Location</h1>
+                    <!-- TODO: Allow user to input the location instead of just displaying a hardcoded location -->
+                    <input id="location-input" type="text" placeholder="San Francisco, Ca" disabled/>
+                </div>
+                <div id="clock-container">
+                    <div id="clock-time"></div>
+                </div>
             </div>
-            <div id="clock-container">
-                <div id="clock-time"></div>
+            <div id="temperature" class="page">
+                <div id="temperature-container">
+                    <h1 id="temperature-heading">Temperature</h1>
+                </div>
             </div>
         </main>
         <script type="module" src="index.js"></script>

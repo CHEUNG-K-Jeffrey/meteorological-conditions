@@ -4,13 +4,13 @@ body {
     margin: 0;
 }
 
+h1 {
+    font-size: 3.5rem;
+}
+
 .page {
     display: grid;
     padding: 5rem;
-}
-
-#location-heading {
-    font-size: 3rem;
 }
 
 #clock-container {
