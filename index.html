@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Meteorological Conditions</title>
-        <link rel="manifest" href="manifest.json" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css/normalize.min.css">
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <main>
-            <div id="home" class="page">
-                <div id="location-container">
-                    <h1 id="location-heading">Location</h1>
-                    <!-- TODO: Allow user to input the location instead of just displaying a hardcoded location -->
-                    <input id="location-input" type="text" placeholder="San Francisco, Ca" disabled/>
-                </div>
-                <div id="clock-container">
-                    <div id="clock-time"></div>
-                </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meteorological Conditions</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css/normalize.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <main>
+        <div id="home" class="page">
+            <div id="location-container">
+                <h1 id="location-heading">Location</h1>
+                <!-- TODO: Allow user to input the location instead of just displaying a hardcoded location -->
+                <input id="location-input" type="text" placeholder="San Francisco, Ca" disabled />
             </div>
-            <div id="temperature" class="page">
-                <div id="temperature-container">
-                    <h1 id="temperature-heading">Temperature</h1>
-                </div>
+            <div id="clock-container">
+                <div id="clock-time"></div>
             </div>
-            <div id="relative-humidity" class="page">
-                <div id="relative-humidity-container">
-                    <h1 id="relative-humidity-heading">Relative Humidity</h1>
-                </div>
+        </div>
+        <div id="temperature" class="page">
+            <div id="temperature-container">
+                <h1 id="temperature-heading">Temperature</h1>
             </div>
-        </main>
-        <script type="module" src="index.js"></script>
-    </body>
+        </div>
+        <div id="relative-humidity" class="page">
+            <div id="relative-humidity-container">
+                <h1 id="relative-humidity-heading">Relative Humidity</h1>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="index.js"></script>
+</body>
+
 </html>
