@@ -28,3 +28,36 @@ if ("serviceWorker" in navigator) {
     console.error("Service workers are not supported.");
   }
   
+let temperaturePage = document.querySelector("#temperature");
+let tempData = document.createElement("p");
+fetch("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m").then (response => {
+  if (!response.ok) {
+    throw new Error("Request failed");
+  }
+  return response.json();
+}).then(data => {
+  tempData.innerText = JSON.stringify(data);
+  return tempData;
+}).catch(error => {
+  tempData.innerText = error;
+  return tempData;
+}).finally( () => {
+  temperaturePage.appendChild(tempData);
+})
+
+let humidityPage = document.querySelector("#relative-humidity");
+let humidityData = document.createElement("p");
+fetch("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=relative_humidity_2m").then (response => {
+  if (!response.ok) {
+    throw new Error("Request failed");
+  }
+  return response.json();
+}).then(data => {
+  humidityData.innerText = JSON.stringify(data);
+  return tempData;
+}).catch(error => {
+  humidityData.innerText = error;
+  return tempData;
+}).finally( () => {
+  humidityPage.appendChild(humidityData);
+})
