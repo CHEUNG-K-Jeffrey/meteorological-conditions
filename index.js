@@ -3,14 +3,18 @@ const location = "latitude=52.52&longitude=13.41";
 
 const generatePageData = (elementSelection, query) => {
   const page = document.querySelector(elementSelection);
-  const pageData = document.createElement("p");
-  fetch(`${baseURL}/v1/forecast?${location}${query}`).then(response => {
+  const pageData = document.createElement("table");
+  fetch(`${baseURL}/v1/forecast?${location}&${Object.keys(query)[0]}=${Object.values(query)[0]}`).then(response => {
     if (!response.ok) {
       throw new Error("Request failed");
     }
     return response.json();
   }).then(data => {
-    pageData.innerText = JSON.stringify(data);
+    for (let i = 0; i < data.hourly.time.length; i++) {
+      let newRow = document.createElement("tr")
+      newRow.innerHTML = `<td>${data.hourly.time[i]}</td><td>${data.hourly[Object.values(query)[0]][i]}</td>`;
+      pageData.appendChild(newRow);
+    }
   }).catch(error => {
     pageData.innerText = error;
   }).finally(() => {
@@ -47,5 +51,5 @@ if ("serviceWorker" in navigator) {
 
 setInterval(runClock, 1000);
 
-generatePageData("#temperature", "&hourly=temperature_2m");
-generatePageData("#relative-humidity", "&hourly=relative_humidity_2m")
+generatePageData("#temperature", {hourly: "temperature_2m"});
+generatePageData("#relative-humidity", {hourly: "relative_humidity_2m"});
