@@ -1,4 +1,3 @@
-"use strict";
 let baseURL = "https://api.open-meteo.com";
 let location = "latitude=52.52&longitude=13.41";
 
@@ -19,9 +18,8 @@ let generatePageData = (elementSelection, query) => {
   })
 }
 
-const clockElement = document.querySelector("#clock-time");
-
-function runClock() {
+const runClock = () => {
+  const clockElement = document.querySelector("#clock-time");
   const locale = (navigator && navigator.language) || "en-US";
 
   const timeOptions = {
