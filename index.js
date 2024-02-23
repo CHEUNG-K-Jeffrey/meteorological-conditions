@@ -30,8 +30,6 @@ const runClock = () => {
   clockElement.textContent = `${time}`;
 }
 
-setInterval(runClock, 1000);
-
 if ("serviceWorker" in navigator) {
   // Register a service worker hosted at the root of the
   // site using the default scope.
@@ -47,7 +45,7 @@ if ("serviceWorker" in navigator) {
   console.error("Service workers are not supported.");
 }
 
-
+setInterval(runClock, 1000);
 
 generatePageData("#temperature", "&hourly=temperature_2m");
 generatePageData("#relative-humidity", "&hourly=relative_humidity_2m")
