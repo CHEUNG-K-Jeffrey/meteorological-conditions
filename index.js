@@ -1,9 +1,9 @@
-let baseURL = "https://api.open-meteo.com";
-let location = "latitude=52.52&longitude=13.41";
+const baseURL = "https://api.open-meteo.com";
+const location = "latitude=52.52&longitude=13.41";
 
-let generatePageData = (elementSelection, query) => {
-  let page = document.querySelector(elementSelection);
-  let pageData = document.createElement("p");
+const generatePageData = (elementSelection, query) => {
+  const page = document.querySelector(elementSelection);
+  const pageData = document.createElement("p");
   fetch(`${baseURL}/v1/forecast?${location}${query}`).then(response => {
     if (!response.ok) {
       throw new Error("Request failed");
