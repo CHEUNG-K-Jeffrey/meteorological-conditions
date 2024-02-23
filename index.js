@@ -1,3 +1,4 @@
+"use strict";
 let baseURL = "https://api.open-meteo.com";
 let location = "latitude=52.52&longitude=13.41";
 
