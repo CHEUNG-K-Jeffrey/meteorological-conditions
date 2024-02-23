@@ -1,3 +1,23 @@
+let baseURL = "https://api.open-meteo.com";
+let location = "latitude=52.52&longitude=13.41";
+
+let generatePageData = (elementSelection, query) => {
+  let page = document.querySelector(elementSelection);
+  let pageData = document.createElement("p");
+  fetch(`${baseURL}/v1/forecast?${location}${query}`).then(response => {
+    if (!response.ok) {
+      throw new Error("Request failed");
+    }
+    return response.json();
+  }).then(data => {
+    pageData.innerText = JSON.stringify(data);
+  }).catch(error => {
+    pageData.innerText = error;
+  }).finally(() => {
+    page.appendChild(pageData);
+  })
+}
+
 const clockElement = document.querySelector("#clock-time");
 
 function runClock() {
@@ -28,25 +48,7 @@ if ("serviceWorker" in navigator) {
   console.error("Service workers are not supported.");
 }
 
-let baseURL = "https://api.open-meteo.com";
-let location = "latitude=52.52&longitude=13.41";
 
-let generatePageData = (elementSelection, query) => {
-  let page = document.querySelector(elementSelection);
-  let pageData = document.createElement("p");
-  fetch(`${baseURL}/v1/forecast?${location}${query}`).then(response => {
-    if (!response.ok) {
-      throw new Error("Request failed");
-    }
-    return response.json();
-  }).then(data => {
-    pageData.innerText = JSON.stringify(data);
-  }).catch(error => {
-    pageData.innerText = error;
-  }).finally(() => {
-    page.appendChild(pageData);
-  })
-}
 
 generatePageData("#temperature", "&hourly=temperature_2m");
 generatePageData("#relative-humidity", "&hourly=relative_humidity_2m")
