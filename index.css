@@ -24,16 +24,32 @@ h1 {
     font-size: 3.5rem;
 }
 
+input,
+textarea {
+    display: block;
+    border: 1px rgb(110, 110, 110) solid;
+    border-radius: 5px;
+    padding: 0.4rem;
+}
+
 table {
     display: grid;
     grid-template-columns: auto auto;
     gap: 2rem;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 2rem;
 }
 
 tr {
     flex-basis: 50%;
     display: flex;
-    gap: 50%;
+    gap: 5px;
+    justify-content:space-around;
+}
+
+td {
+    font-size: 1.5rem;
 }
 
 .divider-menu-item {
@@ -91,6 +107,7 @@ tr {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 5rem 0rem;
 }
 
 #clock-time {
