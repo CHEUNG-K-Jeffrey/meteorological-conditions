@@ -1,3 +1,4 @@
+"use strict";
 const baseURL = "https://api.open-meteo.com";
 const location = "latitude=52.52&longitude=13.41";
 
