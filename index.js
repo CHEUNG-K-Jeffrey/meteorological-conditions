@@ -6,6 +6,8 @@ const location = "latitude=52.52&longitude=13.41";
 const generatePageData = (elementSelection, query) => {
   const page = document.querySelector(elementSelection);
   const pageData = document.createElement("table");
+  document.querySelector(`${elementSelection} > table`)?.remove();
+
   fetch(`${baseURL}/v1/forecast?${location}&${Object.keys(query)[0]}=${Object.values(query)[0]}&forecast_days=1`).then(response => {
     if (!response.ok) {
       throw new Error("Request failed");
