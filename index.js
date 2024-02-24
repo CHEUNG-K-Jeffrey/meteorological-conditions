@@ -39,13 +39,10 @@ const navigatePages = () => {
     hideAllPages();
   }
 
-  // Unhide homepage without hash
+  // Unhide page
   if (hash === "") {
     document.querySelector("#home").removeAttribute("style");
-  }
-
-  // Otherwise unhide any other valid page
-  if (document.querySelector(hash)) {
+  } else if (document.querySelector(hash)) {
     document.querySelector(hash).removeAttribute("style");
   }
 
