@@ -39,7 +39,7 @@ const navigatePages = () => {
   }
 
   // Unhide homepage without hash
-  if (hash === "" ) {
+  if (hash === "") {
     document.querySelector("#home").removeAttribute("style");
   }
 
