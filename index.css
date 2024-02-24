@@ -19,6 +19,18 @@ h1 {
     font-size: 3.5rem;
 }
 
+table {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 2rem;
+}
+
+tr {
+    flex-basis: 50%;
+    display: flex;
+    gap: 50%;
+}
+
 .divider-menu-item {
     display: none;
 }
