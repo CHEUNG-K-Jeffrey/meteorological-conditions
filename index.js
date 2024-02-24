@@ -22,6 +22,13 @@ const generatePageData = (elementSelection, query) => {
   })
 }
 
+const hideAllPages = () => {
+  const pages = document.querySelectorAll(".page");
+  for (let page of pages) {
+    page.style.display = "none";
+  }
+}
+
 const runClock = () => {
   const clockElement = document.querySelector("#clock-time");
   const locale = (navigator && navigator.language) || "en-US";
@@ -53,3 +60,5 @@ setInterval(runClock, 1000);
 
 generatePageData("#temperature", {hourly: "temperature_2m"});
 generatePageData("#relative-humidity", {hourly: "relative_humidity_2m"});
+
+hideAllPages();
