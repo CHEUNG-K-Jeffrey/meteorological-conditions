@@ -30,6 +30,31 @@ const hideAllPages = () => {
   }
 }
 
+const navigatePages = () => {
+  let hash = window.location.hash;
+
+  switch (hash) {
+    case "":
+      hideAllPages();
+      document.querySelector("#home").removeAttribute("style");
+      break;
+    case "#home":
+      hideAllPages();
+      document.querySelector("#home").removeAttribute("style");
+      break;
+    case "#temperature":
+      hideAllPages();
+      generatePageData(hash, { hourly: "temperature_2m" });
+      document.querySelector(hash).removeAttribute("style");
+      break;
+    case "#relative-humidity":
+      hideAllPages();
+      generatePageData(hash, { hourly: "relative_humidity_2m" });
+      document.querySelector(hash).removeAttribute("style");
+      break;
+  }
+}
+
 const runClock = () => {
   const clockElement = document.querySelector("#clock-time");
   const locale = (navigator && navigator.language) || "en-US";
@@ -59,7 +84,7 @@ if ("serviceWorker" in navigator) {
 
 setInterval(runClock, 1000);
 
-generatePageData("#temperature", {hourly: "temperature_2m"});
-generatePageData("#relative-humidity", {hourly: "relative_humidity_2m"});
+window.addEventListener('hashchange', navigatePages);
 
 hideAllPages();
+navigatePages();
