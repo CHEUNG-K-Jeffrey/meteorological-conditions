@@ -16,7 +16,7 @@ const generatePageData = (elementSelection, query) => {
   }).then(data => {
     for (let i = 0; i < data.hourly.time.length; i++) {
       let newRow = document.createElement("tr")
-      newRow.innerHTML = `<td>${data.hourly.time[i]}</td><td>${data.hourly[Object.values(query)[0]][i]}</td>`;
+      newRow.innerHTML = `<td>${data.hourly.time[i]}</td><td>${data.hourly[Object.values(query)[0]][i].toFixed(1)}°</td>`;
       pageData.appendChild(newRow);
     }
   }).catch(error => {
