@@ -1,7 +1,7 @@
 "use strict";
 const DEBUG = false;
 const baseURL = "https://api.open-meteo.com";
-const location = "latitude=52.52&longitude=13.41";
+const location = "latitude=37.77493&longitude=-122.41942";
 
 const generatePageData = (elementSelection, query) => {
   const page = document.querySelector(elementSelection);
