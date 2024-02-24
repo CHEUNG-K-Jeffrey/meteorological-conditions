@@ -33,24 +33,28 @@ const hideAllPages = () => {
 const navigatePages = () => {
   let hash = window.location.hash;
 
+  // Hide all pages
+  if (hash === "" || document.querySelector(hash)) {
+    hideAllPages();
+  }
+
+  // Unhide homepage without hash
+  if (hash === "" ) {
+    document.querySelector("#home").removeAttribute("style");
+  }
+
+  // Otherwise unhide any other valid page
+  if (document.querySelector(hash)) {
+    document.querySelector(hash).removeAttribute("style");
+  }
+
+  // Generate the data when navigating to the page
   switch (hash) {
-    case "":
-      hideAllPages();
-      document.querySelector("#home").removeAttribute("style");
-      break;
-    case "#home":
-      hideAllPages();
-      document.querySelector("#home").removeAttribute("style");
-      break;
     case "#temperature":
-      hideAllPages();
       generatePageData(hash, { hourly: "temperature_2m" });
-      document.querySelector(hash).removeAttribute("style");
       break;
     case "#relative-humidity":
-      hideAllPages();
       generatePageData(hash, { hourly: "relative_humidity_2m" });
-      document.querySelector(hash).removeAttribute("style");
       break;
   }
 }
