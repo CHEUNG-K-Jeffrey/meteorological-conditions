@@ -1,4 +1,5 @@
 "use strict";
+const DEBUG = false;
 const baseURL = "https://api.open-meteo.com";
 const location = "latitude=52.52&longitude=13.41";
 
@@ -71,7 +72,7 @@ const runClock = () => {
   clockElement.textContent = `${time}`;
 }
 
-if ("serviceWorker" in navigator) {
+if (DEBUG === true && "serviceWorker" in navigator) {
   // Register a service worker hosted at the root of the
   // site using the default scope.
   navigator.serviceWorker.register("/sw.js").then(
